@@ -18,11 +18,26 @@ var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Global Variables 
 var confirmLength = "";
+var selected;
 var confirmSpecialCharacters;
 var confirmLowerCasedCharacters;
 var confirmUpperCasedCharacters;
 var confirmNumericCharacters;
 
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
 
 
 // Pops up window to confirm number of characters for password after clicking "Generate Password"
@@ -41,20 +56,19 @@ function generatePassword() {
       confirmLowerCasedCharacters = confirm("Would you like to have lowercase characters?");
       confirmUpperCasedCharacters = confirm("Would you like to have uppercase characters?");
       confirmNumericCharacters = confirm("Would you like to have numeric characters?");
-    }   
+    }  
+    
+    if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters) {
+      selected = alert("Password must include atleast one set of characters")
+    }
+    
 }
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
 
-}
+
+
+
+

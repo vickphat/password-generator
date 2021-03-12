@@ -61,10 +61,24 @@ function generatePassword() {
     if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters) {
       selected = alert("Password must include atleast one set of characters")
     }
-    // 
+    // If all options are picked
     else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
       selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters, numericCharacters);
     }
+    // If 3 options are picked
+    else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters) {
+      selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters)
+    }
+    else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmNumericCharacters) {
+      selected = specialCharacters.concat(lowerCasedCharacters, numericCharacters)
+    }
+    else if (confirmSpecialCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
+      selected = specialCharacters.concat(upperCasedCharacters, numericCharacters)
+    }
+    else if (confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
+      selected = lowerCasedCharacters.concat(upperCasedCharacters, numericCharacters)
+    }
+
 
     var password = [];
     

@@ -18,11 +18,12 @@ var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Global Variables 
 var confirmLength = "";
-var selected;
 var confirmSpecialCharacters;
 var confirmLowerCasedCharacters;
 var confirmUpperCasedCharacters;
 var confirmNumericCharacters;
+
+var selected;
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -42,7 +43,7 @@ function writePassword() {
 
 // Pops up window to confirm number of characters for password after clicking "Generate Password"
 function generatePassword() {
-  var confirmLength = prompt("How many characters would you like your password to be?");
+  var confirmLength = parseInt(prompt("How many characters would you like your password to be?"));
 
   // Prompting for password length and which characters to include
   if (confirmLength < 8 || confirmLength > 128) {
@@ -61,10 +62,25 @@ function generatePassword() {
     if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters) {
       selected = alert("Password must include atleast one set of characters")
     }
+    else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
+      selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters, numericCharacters)
+    }
+
+    var password = [];
+
+    for (var i = 0; i < confirmLength; i++) {
+      var pickSelected = selected[Math.floor(Math.random() * selected.length)];
+      password.push(pickSelected);
+    }
+    
+    
+    
     
 }
 
-
+function UserInput(result) {
+  document.querySelector("#password").textContent = result; 
+}
 
 
 

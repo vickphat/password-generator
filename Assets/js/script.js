@@ -22,7 +22,6 @@ var confirmSpecialCharacters;
 var confirmLowerCasedCharacters;
 var confirmUpperCasedCharacters;
 var confirmNumericCharacters;
-
 var selected;
 
 // Assignment Code
@@ -37,11 +36,9 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
-
-// Pops up window to confirm number of characters for password after clicking "Generate Password"
+// Pops up notification to confirm number of characters for password after clicking "Generate Password"
 function generatePassword() {
   var confirmLength = parseInt(prompt("How many characters would you like your password to be?"));
 
@@ -49,35 +46,37 @@ function generatePassword() {
   if (confirmLength < 8 || confirmLength > 128) {
     confirmLength = prompt("Must be atleast 8 characters and no more than 128 characters");
     }
+    // Pop ups a notification stating message if no length was given
     else if (!confirmLength) {
       alert("Must choose a length");
     }
+    // Options are given once length requirements are met
     else {
       confirmSpecialCharacters = confirm("Would you like to have special characters?");
       confirmLowerCasedCharacters = confirm("Would you like to have lowercase characters?");
       confirmUpperCasedCharacters = confirm("Would you like to have uppercase characters?");
       confirmNumericCharacters = confirm("Would you like to have numeric characters?");
     }  
-    
+    // Pops up a notification if no options are chosen
     if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters) {
       selected = alert("Password must include atleast one set of characters")
     }
+    // 
     else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
-      selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters, numericCharacters)
+      selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters, numericCharacters);
     }
 
     var password = [];
-
+    
     for (var i = 0; i < confirmLength; i++) {
       var pickSelected = selected[Math.floor(Math.random() * selected.length)];
       password.push(pickSelected);
     }
-    
-    
-    
-    
+    var result = password.join("");
+    UserInput(result);
+    return result;
 }
-
+// Adds password into the textbox
 function UserInput(result) {
   document.querySelector("#password").textContent = result; 
 }

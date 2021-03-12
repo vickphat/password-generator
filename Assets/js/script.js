@@ -16,18 +16,14 @@ var upperCasedCharacters = [
 // Array of numeric characters to be included in password
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-// Variable Declarations
+// Global Variables 
 var confirmLength = "";
 var confirmSpecialCharacters;
 var confirmLowerCasedCharacters;
 var confirmUpperCasedCharacters;
 var confirmNumericCharacters;
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 // Pops up window to confirm number of characters for password after clicking "Generate Password"
 function generatePassword() {
@@ -48,7 +44,11 @@ function generatePassword() {
     }   
 }
 
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {

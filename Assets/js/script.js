@@ -59,7 +59,7 @@ function generatePassword() {
   }
   // Pops up a notification if no options are chosen
   if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters) {
-    selected = alert("Password must include atleast one set of characters")
+    selected = alert("Password must include atleast one option")
   }
   // If all options are picked
   else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
@@ -96,6 +96,19 @@ function generatePassword() {
   }
   else if (confirmUpperCasedCharacters && confirmNumericCharacters) {
     selected = upperCasedCharacters.concat(numericCharacters);
+  }
+  // If only 1 options was picked
+  else if (confirmSpecialCharacters){
+    selected = specialCharacters;
+  }
+  else if (confirmLowerCasedCharacters){
+    selected = lowerCasedCharacters;
+  }
+  else if (confirmUpperCasedCharacters){
+    selected = upperCasedCharacters;
+  }
+  else if (confirmNumericCharacters){
+    selected = numericCharacters;
   }
 
 

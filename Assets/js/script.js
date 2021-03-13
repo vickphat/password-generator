@@ -45,54 +45,84 @@ function generatePassword() {
   // Prompting for password length and which characters to include
   if (confirmLength < 8 || confirmLength > 128) {
     confirmLength = prompt("Must be atleast 8 characters and no more than 128 characters");
-    }
-    // Pop ups a notification stating message if no length was given
-    else if (!confirmLength) {
-      alert("Must choose a length");
-    }
-    // Options are given once length requirements are met
-    else {
-      confirmSpecialCharacters = confirm("Would you like to have special characters?");
-      confirmLowerCasedCharacters = confirm("Would you like to have lowercase characters?");
-      confirmUpperCasedCharacters = confirm("Would you like to have uppercase characters?");
-      confirmNumericCharacters = confirm("Would you like to have numeric characters?");
-    }  
-    // Pops up a notification if no options are chosen
-    if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters) {
-      selected = alert("Password must include atleast one set of characters")
-    }
-    // If all options are picked
-    else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
-      selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters, numericCharacters);
-    }
-    // If 3 options are picked
-    else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters) {
-      selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters)
-    }
-    else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmNumericCharacters) {
-      selected = specialCharacters.concat(lowerCasedCharacters, numericCharacters)
-    }
-    else if (confirmSpecialCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
-      selected = specialCharacters.concat(upperCasedCharacters, numericCharacters)
-    }
-    else if (confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
-      selected = lowerCasedCharacters.concat(upperCasedCharacters, numericCharacters)
-    }
+  }
+  // Pop ups a notification stating message if no length was given
+  else if (!confirmLength) {
+    alert("Must choose a length");
+  }
+  // Options are given once length requirements are met
+  else {
+    confirmSpecialCharacters = confirm("Would you like to have special characters?");
+    confirmLowerCasedCharacters = confirm("Would you like to have lowercase characters?");
+    confirmUpperCasedCharacters = confirm("Would you like to have uppercase characters?");
+    confirmNumericCharacters = confirm("Would you like to have numeric characters?");
+  }
+  // Pops up a notification if no options are chosen
+  if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters) {
+    selected = alert("Password must include atleast one set of characters")
+  }
+  // If all options are picked
+  else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
+    selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters, numericCharacters);
+  }
+  // If 3 options are picked
+  else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters) {
+    selected = specialCharacters.concat(lowerCasedCharacters, upperCasedCharacters);
+  }
+  else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmNumericCharacters) {
+    selected = specialCharacters.concat(lowerCasedCharacters, numericCharacters);
+  }
+  else if (confirmSpecialCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
+    selected = specialCharacters.concat(upperCasedCharacters, numericCharacters);
+  }
+  else if (confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
+    selected = lowerCasedCharacters.concat(upperCasedCharacters, numericCharacters);
+  }
+  // If 2 options were picked
+  else if (confirmSpecialCharacters && confirmLowerCasedCharacters) {
+    selected = specialCharacters.concat(lowerCasedCharacters);
+  }
+  else if (confirmSpecialCharacters && confirmUpperCasedCharacters) {
+    selected = specialCharacters.concat(upperCasedCharacters);
+  }
+  else if (confirmSpecialCharacters && confirmNumericCharacters) {
+    selected = specialCharacters.concat(numericCharacters);
+  }
+  else if (confirmLowerCasedCharacters && confirmUpperCasedCharacters) {
+    selected = lowerCasedCharacters.concat(upperCasedCharacters);
+  }
+  else if (confirmLowerCasedCharacters && confirmNumericCharacters) {
+    selected = lowerCasedCharacters.concat(numericCharacters);
+  }
+  else if (confirmUpperCasedCharacters && confirmNumericCharacters) {
+    selected = upperCasedCharacters.concat(numericCharacters);
+  }
 
 
-    var password = [];
-    
-    for (var i = 0; i < confirmLength; i++) {
-      var pickSelected = selected[Math.floor(Math.random() * selected.length)];
-      password.push(pickSelected);
-    }
-    var result = password.join("");
-    UserInput(result);
-    return result;
+
+
+
+
+
+
+
+
+
+
+
+  var password = [];
+
+  for (var i = 0; i < confirmLength; i++) {
+    var pickSelected = selected[Math.floor(Math.random() * selected.length)];
+    password.push(pickSelected);
+  }
+  var result = password.join("");
+  UserInput(result);
+  return result;
 }
 // Adds password into the textbox
 function UserInput(result) {
-  document.querySelector("#password").textContent = result; 
+  document.querySelector("#password").textContent = result;
 }
 
 

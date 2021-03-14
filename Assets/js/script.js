@@ -1,3 +1,11 @@
+// Variables 
+var confirmLength = [];
+var confirmSpecialCharacters;
+var confirmLowerCasedCharacters;
+var confirmUpperCasedCharacters;
+var confirmNumericCharacters;
+var selected;
+
 // Array of special characters to be included in password
 var specialCharacters = [
   '@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'
@@ -16,14 +24,6 @@ var upperCasedCharacters = [
 // Array of numeric characters to be included in password
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-// Global Variables 
-var confirmLength = "";
-var confirmSpecialCharacters;
-var confirmLowerCasedCharacters;
-var confirmUpperCasedCharacters;
-var confirmNumericCharacters;
-var selected;
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -40,26 +40,22 @@ function writePassword() {
 
 // Pops up notification to confirm number of characters for password after clicking "Generate Password"
 function generatePassword() {
-  var confirmLength = parseInt(prompt("How many characters would you like your password to be?"));
+  var confirmLength = prompt("How many characters would you like your password to be?");
 
   // Prompting for password length and which characters to include
   if (confirmLength < 8 || confirmLength > 128) {
-    confirmLength = prompt("Must be atleast 8 characters and no more than 128 characters");
-  }
-  // Pop ups a notification stating message if no length was given
-  else if (!confirmLength) {
-    alert("Must choose a length");
-  }
+    confirmLength = alert("Must be atleast 8 characters and no more than 128 characters");
+  } 
   // Options are given once length requirements are met
   else {
-    confirmSpecialCharacters = confirm("Would you like to have special characters?");
-    confirmLowerCasedCharacters = confirm("Would you like to have lowercase characters?");
-    confirmUpperCasedCharacters = confirm("Would you like to have uppercase characters?");
-    confirmNumericCharacters = confirm("Would you like to have numeric characters?");
+    confirmSpecialCharacters = confirm("Include special characters?");
+    confirmLowerCasedCharacters = confirm("Include lowercase characters?");
+    confirmUpperCasedCharacters = confirm("Include have uppercase characters?");
+    confirmNumericCharacters = confirm("Include numeric characters?");
   }
   // Pops up a notification if no options are chosen
-  if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters) {
-    selected = alert("Password must include atleast one option")
+  if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters ) {
+    selected = alert("Password must include atleast one option");
   }
   // If all options are picked
   else if (confirmSpecialCharacters && confirmLowerCasedCharacters && confirmUpperCasedCharacters && confirmNumericCharacters) {
@@ -111,26 +107,13 @@ function generatePassword() {
     selected = numericCharacters;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
   var password = [];
-
+// For loop
   for (var i = 0; i < confirmLength; i++) {
     var pickSelected = selected[Math.floor(Math.random() * selected.length)];
     password.push(pickSelected);
   }
-  var result = password.join("");
-  UserInput(result);
+  var result = password.join([]);
   return result;
 }
 // Adds password into the textbox

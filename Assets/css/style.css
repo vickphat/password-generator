@@ -1,12 +1,11 @@
+/* Universal selector */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
-body,
-.wrapper {
+html, body{
   height: 100%;
   margin: 0;
   padding: 0;
@@ -18,6 +17,7 @@ body {
 }
 
 .wrapper {
+  height: 100%;
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
@@ -62,6 +62,7 @@ h2 {
   text-align: center;
 }
 
+/* How generate password looks before being clicked */
 .card-footer::before {
   content: " ";
   display: block;
@@ -70,12 +71,14 @@ h2 {
   height: 2px;
 }
 
+/* How generate password looks after being clicked */
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
+/* Style for generate password button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -100,7 +103,7 @@ button[disabled] {
 .float-right {
   float: right;
 }
-
+/* Style for text field */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -122,6 +125,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* Responsive layout */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

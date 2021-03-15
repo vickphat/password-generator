@@ -28,3 +28,4 @@ the javascript. However, in the html and CSS files, I made a few minor changes. 
 rest of the generator layout. Then, in javascript, I wrote code to match all of the criteria that was asked.</p>
 
 <p>First, when you go to the password generator, you will see the password generator</p>
+<img src="Homework\Password-Generator-Homework\password-generator\Assets\images\password-gen1.JPG">

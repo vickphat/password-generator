@@ -1,6 +1,6 @@
 # Password Generator
 
-For this home assignment, I was tasked with creating a password generator.
+For this homework assignment, I was tasked with creating a password generator.
 
 <h2>The following is the list of criteria for the password generator:</h2>
 
@@ -48,14 +48,14 @@ greater than 128, a window alert will pop up and state that it must be equal to 
 
 <p>If that happens, te user will have to hit the "Generate Password" button again to enter an amount for the number of characters.</p>
 
-<p>After the user has entered an amount that abides by the parameters that are set. An pop up will confirm the amount that the user has entered.</p>
+<p>After the user has entered an amount that abides by the parameters, a pop up will confirm the amount that the user has entered.</p>
 
 <img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen4.JPG">
 
 <img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen5.JPG">
 <br>
 
-<p>After that, they will be presented with a series of prompts to ask if they would like certain characters to be included in their password. The first prompt will be if they would like to include special characters. If the "ok" button is clicked, then it will notify the user that their password will include special characters. If "cancel" is click, it will notify the user that it will not include special characters.</p>
+<p>After that, the user will be presented with a series of prompts to ask if they would like certain characters to be included in their password. The first prompt will be if they would like to include special characters. If the "ok" button is clicked, then it will notify the user that their password will include special characters. If "cancel" is click, it will notify the user that it will not include special characters.</p>
 
 <img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen6.JPG">
 
@@ -65,7 +65,7 @@ greater than 128, a window alert will pop up and state that it must be equal to 
 
 <br>
 
-<p>After the first prompt, the user will be asked the same questions but instead of special characters, it will be for lowercase characters, uppercased characters and numeric characters. All will have the same layout where clicking "ok" or "cancel" will notify the user of their selection and if the characters will be included or not.</p>
+<p>After the first prompt, the user will be asked the same questions. However, instead of special characters, it will be for lowercase, uppercased and numeric characters. All will have the same layout where clicking "ok" or "cancel" will notify the user of their selection and if the characters will be included or not.</p>
 
 <img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen10.JPG">
 
@@ -75,9 +75,11 @@ greater than 128, a window alert will pop up and state that it must be equal to 
 
 <br>
 
-<p>After all parameters are selected, the password will generate and then it will automatically be put int the text field where the user can highlight it and copy it.</p>
+<p>After all parameters are selected, the password will generate and then it will automatically be put into the text field where the user can highlight it and copy it.</p>
 
 <img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen9.JPG">
+
+<p>If the generated password is not to the users liking, the user would have to simply click the "Generate Password" button again to restart the generator.</p>
 
 <h2>URL FOR DEPLOYED APPLICATION</h2>
 

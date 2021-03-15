@@ -69,9 +69,16 @@ greater than 128, a window alert will pop up and state that it must be equal to 
 
 <img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen10.JPG">
 
-<img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/pasword-gen11.JPG">
+<img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen11.JPG">
 
 <img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen12.JPG">
 
+<br>
 
+<p>After all parameters are selected, the password will generate and then it will automatically be put int the text field where the user can highlight it and copy it.</p>
 
+<img src="https://github.com/vickphat/password-generator/blob/master/Assets/images/password-gen9.JPG">
+
+<h2>URL FOR DEPLOYED APPLICATION</h2>
+
+https://vickphat.github.io/password-generator/

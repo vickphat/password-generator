@@ -41,6 +41,8 @@ function writePassword() {
 // Pops up notification to confirm number of characters for password after clicking "Generate Password"
 function generatePassword() {
   var confirmLength = prompt("How many characters would you like your password to be?");
+  if (confirmLength >= 8 && confirmLength <= 128)
+    alert("Your password will have " + confirmLength + " characters.");
 
   // Prompting for password length and which characters to include
   if (confirmLength < 8 || confirmLength > 128) {
@@ -53,6 +55,7 @@ function generatePassword() {
     confirmUpperCasedCharacters = confirm("Include have uppercase characters?");
     confirmNumericCharacters = confirm("Include numeric characters?");
   }
+
   // Pops up a notification if no options are chosen
   if (!confirmSpecialCharacters && !confirmLowerCasedCharacters && !confirmUpperCasedCharacters && !confirmNumericCharacters ) {
     selected = alert("Password must include atleast one option");

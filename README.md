@@ -81,6 +81,12 @@ greater than 128, a window alert will pop up and state that it must be equal to 
 
 <p>If the generated password is not to the users liking, the user would have to simply click the "Generate Password" button again to restart the generator.</p>
 
+<h2>Technology Used</h2>
+
+    * JavaScript
+    * CSS
+    * HTML
+
 <h2>URL FOR DEPLOYED APPLICATION</h2>
 
 https://vickphat.github.io/password-generator/
